@@ -1,0 +1,128 @@
+object Form1: TForm1
+  Left = 568
+  Height = 414
+  Top = 178
+  Width = 614
+  Caption = 'Random Funktionstest'
+  ClientHeight = 414
+  ClientWidth = 614
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDefault
+  LCLVersion = '2.0.6.0'
+  object Chart1: TChart
+    Left = 0
+    Height = 364
+    Top = 0
+    Width = 614
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+        Title.Caption = 'Häufigkeit'
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.LabelFont.Orientation = 900
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.Visible = True
+        Title.Caption = 'Zufallszahl'
+        Title.LabelBrush.Style = bsClear
+      end>
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'Häufigkeit von Zufallszahlen'
+    )
+    Title.Visible = True
+    Align = alClient
+    object Chart1LineSeries1: TLineSeries
+      Pointer.Brush.Color = clFuchsia
+      Pointer.Style = psCircle
+      Pointer.Visible = True
+      ShowPoints = True
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 364
+    Width = 614
+    Align = alBottom
+    Caption = 'Panel1'
+    TabOrder = 1
+    Wordwrap = True
+  end
+  object ActionList1: TActionList
+    left = 186
+    top = 69
+    object RandomEditAction: TAction
+      Caption = '&Zufallsfunktion bearbeiten'
+      OnExecute = RandomEditActionExecute
+    end
+    object FileSaveAsAction: TFileSaveAs
+      Category = 'File'
+      Caption = 'Sichern &als ...'
+      Dialog.DefaultExt = '.BMP'
+      Dialog.Filter = 'Bitmap|*.bmp|PNG|*.png|JPEG|*.jpg'
+      Hint = 'speichert das Diagramm in einer Datei'
+      ShortCut = 4179
+      OnAccept = FileSaveAsActionAccept
+    end
+    object FileExitAction: TFileExit
+      Category = 'File'
+      Caption = '&Beenden'
+      Hint = 'Beenden'
+      ShortCut = 4177
+    end
+  end
+  object MainMenu1: TMainMenu
+    left = 93
+    top = 84
+    object MenuItem2: TMenuItem
+      Caption = 'Datei'
+      object MenuItem3: TMenuItem
+        Caption = '&Neu'
+        Visible = False
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Öffnen ...'
+        Visible = False
+      end
+      object MenuItem5: TMenuItem
+        Caption = '&Speichern'
+        Visible = False
+      end
+      object MenuItem6: TMenuItem
+        Action = FileSaveAsAction
+      end
+      object MenuItem7: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem8: TMenuItem
+        Caption = '&Drucken'
+      end
+      object MenuItem9: TMenuItem
+        Caption = 'D&rucker einrichten ...'
+      end
+      object MenuItem10: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem11: TMenuItem
+        Action = FileExitAction
+        ShortCutKey2 = 32883
+      end
+    end
+    object RandomEditItem: TMenuItem
+      Action = RandomEditAction
+    end
+  end
+end

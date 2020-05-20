@@ -1,0 +1,79 @@
+object RandomEditForm: TRandomEditForm
+  Left = 764
+  Height = 209
+  Top = 279
+  Width = 392
+  BorderStyle = bsDialog
+  BorderWidth = 4
+  Caption = 'Zufallsgenerator einrichten'
+  ClientHeight = 209
+  ClientWidth = 392
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.6.0'
+  object BitBtn1: TBitBtn
+    Left = 24
+    Height = 30
+    Top = 144
+    Width = 75
+    Default = True
+    DefaultCaption = True
+    Kind = bkOK
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 19
+    Height = 16
+    Top = 17
+    Width = 129
+    Caption = '&Anzahl Zufallszahlen:'
+    FocusControl = CaseCountEdit
+    ParentColor = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    Left = 19
+    Height = 16
+    Top = 60
+    Width = 60
+    Caption = '&Versuche:'
+    FocusControl = SampleCountEdit
+    ParentColor = False
+  end
+  object ChartUpdateCheckBox: TCheckBox
+    Left = 19
+    Height = 18
+    Hint = 'paßt die Skalierung an die neue Ausgabe an'
+    Top = 104
+    Width = 137
+    Alignment = taLeftJustify
+    Caption = '&Diagramm anpassen'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+  end
+  object CaseCountEdit: TEdit
+    Left = 168
+    Height = 21
+    Hint = 'Ganze Zahl:'#10'0 erzeugt gebrochene Zufallszahlen von 0 bis unter 1. '#10'Sonst werden ganze Zufallszahlen von 0 bis kleiner als diese Zahl erzeugt. '
+    Top = 15
+    Width = 168
+    OnChange = CaseCountEditChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+    Text = '10'
+  end
+  object SampleCountEdit: TEdit
+    Left = 168
+    Height = 21
+    Hint = 'Anzahl von Aufrufen der Zufallsfunktion.'
+    Top = 58
+    Width = 168
+    OnChange = CaseCountEditChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    Text = '1000'
+  end
+end

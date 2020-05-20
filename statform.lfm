@@ -1,0 +1,51 @@
+object StatusForm: TStatusForm
+  Left = 594
+  Height = 181
+  Top = 201
+  Width = 471
+  BorderStyle = bsDialog
+  Caption = 'Fortschritt'
+  ClientHeight = 181
+  ClientWidth = 471
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnHide = FormHide
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 0
+    Height = 100
+    Top = 0
+    Width = 471
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Caption = '0 % fertig'
+    Font.Height = 85
+    Font.Pitch = fpFixed
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+    OnClick = Label1Click
+    OptimalFill = True
+  end
+  object BitBtn1: TBitBtn
+    Left = 175
+    Height = 30
+    Top = 125
+    Width = 120
+    Cancel = True
+    DefaultCaption = True
+    Kind = bkAbort
+    ModalResult = 3
+    OnClick = BitBtn1Click
+    TabOrder = 0
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    left = 62
+    top = 23
+  end
+end
